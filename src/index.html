@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <p>WPS url:
+    <input type="text" id="txt_url" value="http://geoprocessing.demo.52north.org:8080/52n-wps-webapp-3.3.1-gt/WebProcessingService" style="width: 100%;">
+  </p>
+  <button id="GetCapabilities">GetCapabilities</button>
+  <hr>
+
+  <p>Identifier:
+    <input type="text" id="txt_identifier" value="v.buffer">
+  </p>
+  <button id="DescribeProcess">GET DescribeProcess</button>
+
+
+
+  <hr>
+  <p>POST body:
+    <textarea rows="10" cols="150" id="txt_body">
+      {"name":{"namespaceURI":"http://www.opengis.net/wps/1.0.0","localPart":"Execute","prefix":"wps","key" :"{http://www.opengis.net/wps/1.0.0}Execute","string":"{http://www.opengis.net/wps/1.0.0}wps:Execute" },
+
+"value":{"TYPE_NAME":"WPS_1_0_0.Execute","service":"WPS","version":"1.0.0","identifier":{"TYPE_NAME"
+      :"OWS_1_1_0.CodeType","value":"Buffer"},"dataInputs":{"TYPE_NAME":"WPS_1_0_0.DataInputsType","input" :[{"TYPE_NAME":"WPS_1_0_0.InputType","identifier":{"TYPE_NAME":"OWS_1_1_0.CodeType","value":"InputPolygon" },"title":{"TYPE_NAME":"OWS_1_1_0.LanguageStringType","value":"Playground
+      area"},"reference":{"TYPE_NAME" :"WPS_1_0_0.InputReferenceType","href":"http://foo.bar/some_WFS_request.xml"}},{"TYPE_NAME":"WPS_1_0_0 .InputType","identifier":{"TYPE_NAME":"OWS_1_1_0.CodeType","value":"BufferDistance"},"title":{"TYPE_NAME" :"OWS_1_1_0.LanguageStringType","value":"Distance
+      which people will walk to get to a playground."},"data" :{"TYPE_NAME":"WPS_1_0_0.DataType","literalData":{"TYPE_NAME":"WPS_1_0_0.LiteralDataType","value":"400" }}}]},"responseForm":{"TYPE_NAME":"WPS_1_0_0.ResponseFormType","responseDocument":{"TYPE_NAME":"WPS_1_0_0
+      .ResponseDocumentType","storeExecuteResponse":true,"output":[{"TYPE_NAME":"WPS_1_0_0.DocumentOutputDefinitionType" ,"asReference":true,"identifier":{"TYPE_NAME":"OWS_1_1_0.CodeType","value":"BufferedPolygon"},"title" :{"TYPE_NAME":"OWS_1_1_0.LanguageStringType","value":"Area
+      serviced by playground."},"_abstract":{"TYPE_NAME" :"OWS_1_1_0.LanguageStringType","value":"Area within which most users of this playground will live." }}]}}}}
+    </textarea>
+  </p>
+
+  <button id="Execute">POST Execute</button>
+
+</body>
+
+</html>

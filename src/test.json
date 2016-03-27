@@ -1,0 +1,76 @@
+{
+  "name": {
+    "namespaceURI": "http://www.opengis.net/wps/1.0.0",
+    "localPart": "Execute",
+    "prefix": "wps",
+    "key": "{http://www.opengis.net/wps/1.0.0}Execute",
+    "string": "{http://www.opengis.net/wps/1.0.0}wps:Execute"
+  },
+  "value": {
+    "TYPE_NAME": "WPS_1_0_0.Execute",
+    "service": "WPS",
+    "version": "1.0.0",
+    "identifier": {
+      "TYPE_NAME": "OWS_1_1_0.CodeType",
+      "value": "v.buffer"
+    },
+    "dataInputs": {
+      "TYPE_NAME": "WPS_1_0_0.DataInputsType",
+      "input": [{
+        "TYPE_NAME": "WPS_1_0_0.InputType",
+        "identifier": {
+          "TYPE_NAME": "OWS_1_1_0.CodeType",
+          "value": "InputPolygon"
+        },
+        "title": {
+          "TYPE_NAME": "OWS_1_1_0.LanguageStringType",
+          "value": "Playgroundarea"
+        },
+        "reference": {
+          "TYPE_NAME": "WPS_1_0_0.InputReferenceType",
+          "href": "http://foo.bar/some_WFS_request.xml"
+        }
+      }, {
+        "TYPE_NAME": "WPS_1_0_0.InputType",
+        "identifier": {
+          "TYPE_NAME": "OWS_1_1_0.CodeType",
+          "value": "BufferDistance"
+        },
+        "title": {
+          "TYPE_NAME": "OWS_1_1_0.LanguageStringType",
+          "value": "Distancewhichpeoplewillwalktogettoaplayground."
+        },
+        "data": {
+          "TYPE_NAME": "WPS_1_0_0.DataType",
+          "literalData": {
+            "TYPE_NAME": "WPS_1_0_0.LiteralDataType",
+            "value": "400"
+          }
+        }
+      }]
+    },
+    "responseForm": {
+      "TYPE_NAME": "WPS_1_0_0.ResponseFormType",
+      "responseDocument": {
+        "TYPE_NAME": "WPS_1_0_0.ResponseDocumentType",
+        "storeExecuteResponse": true,
+        "output": [{
+          "TYPE_NAME": "WPS_1_0_0.DocumentOutputDefinitionType",
+          "asReference": true,
+          "identifier": {
+            "TYPE_NAME": "OWS_1_1_0.CodeType",
+            "value": "output"
+          },
+          "title": {
+            "TYPE_NAME": "OWS_1_1_0.LanguageStringType",
+            "value": "Creates a buffer around vector features of given type."
+          },
+          "_abstract": {
+            "TYPE_NAME": "OWS_1_1_0.LanguageStringType",
+            "value": "http://grass.osgeo.org/grass70/manuals/html70_user/v.buffer.html"
+          }
+        }]
+      }
+    }
+  }
+}
